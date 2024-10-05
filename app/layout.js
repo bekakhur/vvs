@@ -21,9 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="w-full h-screen overflow-x-hidden bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
+      <body className="w-full h-screen flex flex-col items-center bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
         <Header />
-        {children}
+        <div className="mt-16 lg:mt-24">{children}</div>
       </body>
     </html>
   );
