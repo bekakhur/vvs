@@ -23,28 +23,23 @@ const navList = [
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="w-full top-0 fixed transition-all h-16  flex items-center text-2xl text-white px-4 lg:px-8 font-bold justify-between lg:h-24 bg-gradient-to-b from-black to-transparent">
-      <p>VVS</p>
-      <div
-        className="lg:hidden cursor-pointer transition-all"
-        onClick={(e) => setIsMenuOpen(!isMenuOpen)}
-      >
-        H
+    <div className="w-screen overflow-hidden flex flex-col items-center">
+      <div className="w-full flex justify-between h-16 lg:h-24 bg-gradient-to-b text-white uppercase p-4 lg:p-8 text-2xl from-black to-transparent transition-all">
+        <p>VSS</p>
+        <div className="gap-6 hidden lg:flex">
+          <p>video</p>
+          <p>images</p>
+          <p>audio</p>
+        </div>
+        <p className="lg:hidden" onClick={(e) => setIsMenuOpen(!isMenuOpen)}>
+          H
+        </p>
       </div>
-      <div className="hidden lg:flex font-light gap-6 uppercase">
-        {navList.map((e) => {
-          return <p onClick={(e) => setIsMenuOpen(false)}>{e.title}</p>;
-        })}
-      </div>
       <div
-        className={`w-full h-screen absolute lg:hidden flex flex-col items-center shadow-lg gap-12 uppercase pt-8 bg-black right-[-100%] transition-all duration-500 top-16 ${
-          isMenuOpen && " translate-x-[-100%]"
+        className={`min-h-screen absolute overflow-hidden top-16 duration-500 right-[-100%] bg-black w-screen transition-all ${
+          isMenuOpen && "right-0"
         }`}
-      >
-        {navList.map((e) => {
-          return <p onClick={(e) => setIsMenuOpen(false)}>{e.title}</p>;
-        })}
-      </div>
+      ></div>
     </div>
   );
 };

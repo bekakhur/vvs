@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import HeaderC from "@/components/HeaderC";
 import Header from "@/components/Header";
 
 const geistSans = localFont({
@@ -21,9 +22,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="w-full h-screen flex flex-col items-center bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
-        <Header />
-        <div className="mt-16 lg:mt-24">{children}</div>
+      <body className="overflow-hidden bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
+        <HeaderC />
+        <div>{children}</div>
       </body>
     </html>
   );
