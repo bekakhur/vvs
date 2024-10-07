@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import HeaderC from "@/components/HeaderC";
 import Header from "@/components/Header";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,12 +24,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        {/* Meta tag for iOS Safari status bar */}
+      <Head>
+        <meta name="theme-color" content="#000000" />
+
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      </head>
-      <body className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
+      </Head>
+      <body className="overscroll-none bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
         <HeaderC />
         <div>{children}</div>
       </body>
