@@ -18,19 +18,25 @@ const geistMono = localFont({
 export const metadata = {
   title: "VVS",
   description: "VVS",
-  themeColor: "#1f2937",
+  viewport:
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <meta name="theme-color" content="#000000" />
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      </Head>
-      <body className="overscroll-none bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
+      </head>
+      <body className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
         <HeaderC />
         <div>{children}</div>
       </body>
