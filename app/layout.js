@@ -3,6 +3,7 @@ import "./globals.css";
 import HeaderC from "@/components/HeaderC";
 import Header from "@/components/Header";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300">
         <HeaderC />
         <div>{children}</div>
+        <Footer />
       </body>
     </html>
   );

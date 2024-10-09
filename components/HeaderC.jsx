@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const navList = [
@@ -25,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-b text-2xl font-light from-black to-transparent">
+    <nav className="bg-gradient-to-b text-2xl fixed w-full font-light from-black to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 lg:h-20 transition-all">
           <div className="flex items-center">
@@ -63,9 +64,13 @@ const Navbar = () => {
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             {navList.map((e) => {
               return (
-                <p key={e.title} className="text-white uppercase">
+                <Link
+                  href={`/${e.title}`}
+                  key={e.title}
+                  className="text-white uppercase"
+                >
                   {e.title}
-                </p>
+                </Link>
               );
             })}
           </div>
@@ -98,9 +103,14 @@ const Navbar = () => {
         </button>
         {navList.map((e) => {
           return (
-            <p key={e.title} className="text-white mt-6 uppercase">
+            <Link
+              onClick={toggleMenu}
+              href={`/${e.title}`}
+              key={e.title}
+              className="text-white mt-6 uppercase"
+            >
               {e.title}
-            </p>
+            </Link>
           );
         })}
       </div>
