@@ -9,6 +9,7 @@ export default function Home() {
         height={600}
         objectFit="cover"
         alt="joker"
+        loading="lazy"
       />
     </div>
   );
