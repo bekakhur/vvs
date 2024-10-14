@@ -10,7 +10,6 @@ const page = () => {
         height={600}
         objectFit="cover"
         alt="joker"
-        loading="lazy"
       />
     </div>
   );
