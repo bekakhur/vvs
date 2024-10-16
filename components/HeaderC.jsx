@@ -26,10 +26,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-b text-2xl fixed w-full font-light from-black to-transparent">
+    <nav className="bg-gradient-to-b z-50 text-2xl fixed w-full font-light from-black to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20 transition-all">
-          <div className="flex bg-gradient-to-t from-black border border-yellow-950 shadow-md shadow-yellow-600 via-yellow-800 to-black h-10 w-24 justify-center items-center">
+          <div className="flex bg-gradient-to-t from-yellow-800 border border-yellow-300 shadow-sm shadow-yellow-600 via-yellow-700 to-yellow-800 h-10 w-24 justify-center items-center">
             <a href="/" className="font-bold text-4xl text-yellow-500">
               V<span className="text-yellow-400">V</span>S
             </a>

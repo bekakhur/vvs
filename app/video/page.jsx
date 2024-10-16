@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Carousel from "@/components/Carousel";
 
 const page = () => {
   return (
@@ -11,6 +12,9 @@ const page = () => {
         objectFit="cover"
         alt="joker"
       />
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
     </div>
   );
 };

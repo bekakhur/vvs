@@ -1,3 +1,4 @@
+import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
         alt="joker"
         loading="lazy"
       />
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
     </div>
   );
 }
