@@ -15,6 +15,12 @@ export default function Home() {
       <div className="h-[600px] w-full">
         <Carousel />
       </div>
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
     </div>
   );
 }

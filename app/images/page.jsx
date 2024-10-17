@@ -13,7 +13,15 @@ const images = [
 const page = () => {
   return (
     <div className="w-full min-h-screen">
-      <Carousel images={images} slidesToShow={3} />
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>{" "}
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
+      <div className="h-[600px] w-full">
+        <Carousel />
+      </div>
     </div>
   );
 };

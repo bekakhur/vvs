@@ -87,7 +87,10 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
 
       {/* Right arrow */}
       <button
-        onClick={nextSlide}
+        onClick={(e) => {
+          nextSlide();
+          e.currentTarget.blur(); // Убираем фокус
+        }}
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-300 bg-opacity-40 text-white px-5 py-2 text-3xl rounded-full hover:bg-gray-300 transition-opacity duration-300 focus:outline-none"
       >
         &#8250;
