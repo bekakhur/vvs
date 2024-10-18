@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col items-center min-h-screen">
+    <div className="w-full flex flex-col gap-20 md:gap-32 items-center min-h-screen">
       <Image
         src="/joker.jpg"
         width={600}
@@ -12,15 +12,9 @@ export default function Home() {
         alt="joker"
         loading="lazy"
       />
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
+      <Carousel />
+      <Carousel />
+      <Carousel />
     </div>
   );
 }

@@ -52,7 +52,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
   };
 
   return (
-    <div className="relative w-full border top-24 border-white rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
+    <div className="relative w-full border border-white rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{
@@ -71,7 +71,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full cursor-pointer h-64 object-cover md:h-96"
+              className="w-full cursor-pointer h-96 object-cover md:h-96"
             />
           </div>
         ))}
@@ -80,18 +80,15 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
       {/* Left arrow */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-300 bg-opacity-40 text-white px-5 py-2 text-3xl rounded-full hover:bg-gray-300 transition-opacity duration-300 focus:outline-none"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-300 bg-opacity-40 text-white px-5 py-2 text-3xl rounded-full active:bg-yellow-300 active:bg-opacity-40 md:hover:bg-gray-300 transition-opacity duration-300 focus:outline-none"
       >
         &#8249;
       </button>
 
       {/* Right arrow */}
       <button
-        onClick={(e) => {
-          nextSlide();
-          e.currentTarget.blur(); // Убираем фокус
-        }}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-300 bg-opacity-40 text-white px-5 py-2 text-3xl rounded-full hover:bg-gray-300 transition-opacity duration-300 focus:outline-none"
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-300 bg-opacity-40 text-white px-5 py-2 text-3xl rounded-full active:bg-yellow-300 active:bg-opacity-40 md:hover:bg-gray-300 transition-opacity duration-300 focus:outline-none"
       >
         &#8250;
       </button>

@@ -12,16 +12,10 @@ const images = [
 
 const page = () => {
   return (
-    <div className="w-full min-h-screen">
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>{" "}
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
+    <div className="w-full flex flex-col gap-20 md:gap-32 pt-24 min-h-screen">
+      <Carousel />
+      <Carousel />
+      <Carousel />
     </div>
   );
 };

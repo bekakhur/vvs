@@ -4,7 +4,7 @@ import Carousel from "@/components/Carousel";
 
 const page = () => {
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full flex flex-col gap-20 md:gap-32 min-h-screen">
       <Image
         src="/time_enemy.jpg"
         width={1400}
@@ -12,15 +12,9 @@ const page = () => {
         objectFit="cover"
         alt="joker"
       />
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
-      <div className="h-[600px] w-full">
-        <Carousel />
-      </div>
+      <Carousel />
+      <Carousel />
+      <Carousel />
     </div>
   );
 };
