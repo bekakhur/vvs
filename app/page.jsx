@@ -6,11 +6,11 @@ export default function Home() {
     <div className="w-full flex flex-col gap-20 md:gap-32 items-center min-h-screen">
       <Image
         src="/joker.jpg"
-        width={600}
-        height={600}
+        width={500}
+        height={500}
         objectFit="cover"
         alt="joker"
-        loading="lazy"
+        className="h-screen w-auto object-cover"
       />
       <Carousel />
       <Carousel />
