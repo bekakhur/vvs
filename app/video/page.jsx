@@ -11,7 +11,7 @@ const page = () => {
         height={1400}
         objectFit="cover"
         alt="joker"
-        className="h-screen object-cover w-auto"
+        className="h-[60vh] md:h-[100vh] object-cover w-auto"
       />
       <Carousel />
       <Carousel />

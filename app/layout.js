@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import HeaderC from "@/components/HeaderC";
 import Header from "@/components/Header";
 import Head from "next/head";
 import Footer from "@/components/Footer";
@@ -38,7 +37,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
       <body className="bg-gradient-to-r from-black via-gray-900 to-black">
-        <HeaderC />
+        <Header />
         <div>{children}</div>
         <Footer />
       </body>

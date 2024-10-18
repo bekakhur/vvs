@@ -1,4 +1,5 @@
 import Carousel from "@/components/Carousel";
+import Image from "next/image";
 import React from "react";
 
 const images = [
@@ -12,7 +13,15 @@ const images = [
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col gap-20 md:gap-32 pt-24 min-h-screen">
+    <div className="w-full flex flex-col gap-20 md:gap-32 min-h-screen">
+      <Image
+        src="/knight.jpg"
+        width={500}
+        height={500}
+        objectFit="cover"
+        alt="joker"
+        className="h-[60vh] md:h-[100vh] w-auto object-cover"
+      />
       <Carousel />
       <Carousel />
       <Carousel />

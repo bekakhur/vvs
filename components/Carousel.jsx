@@ -5,10 +5,12 @@ import { useState, useEffect } from "react";
 const images = [
   "./joker.jpg",
   "./time_enemy.jpg",
+  "./knight.jpg",
+  "./detachment.jpg",
   "./joker.jpg",
   "./time_enemy.jpg",
-  "./joker.jpg",
-  "./time_enemy.jpg",
+  "./knight.jpg",
+  "./detachment.jpg",
 ];
 
 const slidesToShow = 3;

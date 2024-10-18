@@ -10,7 +10,7 @@ export default function Home() {
         height={500}
         objectFit="cover"
         alt="joker"
-        className="h-screen w-auto object-cover"
+        className="h-[60vh] md:h-[100vh] w-auto object-cover"
       />
       <Carousel />
       <Carousel />
