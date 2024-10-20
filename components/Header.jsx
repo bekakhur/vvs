@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20 transition-all">
           <a href="/" className="font-bold text-4xl text-yellow-500">
-            <div className="flex bg-gradient-to-t from-yellow-800 border border-yellow-300 shadow-sm shadow-yellow-600 via-yellow-700 to-yellow-800 h-10 w-24 justify-center items-center">
+            <div className="flex bg-gradient-to-t from-yellow-700 border rounded-sm border-yellow-200 shadow-sm shadow-yellow-100 via-yellow-800 to-yellow-700 h-10 w-24 justify-center items-center">
               <span>V</span>
               <span className="text-yellow-400">V</span>
               <span>S</span>

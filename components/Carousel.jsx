@@ -23,7 +23,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setSlidesToScroll(2);
+        setSlidesToScroll(1);
       } else if (window.innerWidth < 1024) {
         setSlidesToScroll(2);
       } else {
