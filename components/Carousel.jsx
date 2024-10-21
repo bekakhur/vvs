@@ -69,7 +69,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0"
+              className="flex-shrink-0 bg-gradient-to-t from-black via-transparent to-black"
               style={{
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}
@@ -77,8 +77,11 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full cursor-pointer h-40 object-cover md:h-64"
+                className="w-full cursor-pointer opacity-70 h-40 object-cover md:h-64"
               />
+              <h3 className="text-white text-xl font-semibold absolute translate-x-[15%] -translate-y-10">
+                Liverpool
+              </h3>
             </div>
           ))}
         </div>
