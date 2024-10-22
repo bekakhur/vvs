@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const images = [
@@ -67,22 +68,31 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
           }}
         >
           {images.map((image, index) => (
-            <div
+            <Link
+              href={"/player"}
               key={index}
-              className="flex-shrink-0 bg-gradient-to-t from-black via-transparent to-black"
+              className="flex-shrink-0 relative flex justify-center items-center bg-gradient-to-t from-black via-transparent to-black"
               style={{
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}
             >
               <img
+                src="./lock.svg"
+                className=" h-20 w-20 z-50 mb-4 absolute opacity-80"
+                alt=""
+              />
+              <div className="top-2 right-2 px-2 py-1 bg-opacity-60 text-sm bg-black z-50 absolute text-white">
+                <p>2:14:03</p>
+              </div>
+              <img
                 src={image}
                 alt={`Slide ${index + 1}`}
                 className="w-full cursor-pointer opacity-70 h-40 object-cover md:h-64"
               />
-              <h3 className="text-white text-xl font-semibold absolute translate-x-[15%] -translate-y-10">
+              <h3 className="text-white text-xl font-semibold absolute left-4 bottom-4">
                 Liverpool
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
 
