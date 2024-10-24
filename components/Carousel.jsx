@@ -89,7 +89,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
                 alt={`Slide ${index + 1}`}
                 className="w-full cursor-pointer opacity-70 h-40 object-cover md:h-64"
               />
-              <h3 className="text-white text-xl font-semibold absolute left-4 bottom-2">
+              <h3 className="text-white text-xl font-semibold absolute left-2 bottom-1 md:bottom-2">
                 Liverpool
               </h3>
             </Link>
