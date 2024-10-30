@@ -44,7 +44,11 @@ const page = () => {
         {images.map((e) => {
           return (
             <div className="w-full h-64">
-              <img src={e} alt="" className=" object-cover w-full h-64" />
+              <img
+                src={e}
+                alt=""
+                className=" object-cover grayscale w-full h-64"
+              />
             </div>
           );
         })}
