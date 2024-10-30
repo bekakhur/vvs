@@ -63,13 +63,13 @@ const Navbar = () => {
             </button>
           </div>
           {/* Links for desktop view */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+          <div className="hidden lg:flex gap-6 lg:items-center lg:space-x-4">
             {navList.map((e) => {
               return (
                 <Link
                   href={`/${e.title}`}
                   key={e.title}
-                  className="text-white uppercase"
+                  className="text-white font-semibold uppercase"
                 >
                   {e.title}
                 </Link>

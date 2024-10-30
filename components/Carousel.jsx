@@ -71,7 +71,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
             <Link
               href={"/player"}
               key={index}
-              className="flex-shrink-0 relative flex justify-center items-center bg-gradient-to-t from-black via-transparent to-black"
+              className="flex-shrink-0 relative grayscale flex justify-center items-center bg-gradient-to-t from-black via-transparent to-black"
               style={{
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}

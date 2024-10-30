@@ -23,7 +23,7 @@ const page = () => {
   };
 
   return (
-    <div className="text-white">
+    <div className="text-white overscroll-none">
       <div className="w-full text-white h-[40vh] z-50 md:h-[100vh] md:overflow-hidden sticky top-0 bg-black flex justify-center items-center">
         <button
           onClick={handleBack}
