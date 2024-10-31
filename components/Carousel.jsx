@@ -59,9 +59,9 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
       <h2 className="text-white uppercase font-bold text-xl md:text-3xl">
         Premier League
       </h2>
-      <div className="relative w-full border border-white rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
+      <div className="relative w-full bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 bg-zinc-900 ease-in-out"
           style={{
             transform: `translateX(-${(currentIndex / slidesToScroll) * 100}%)`,
             gap: `${gap}px`, // Задаём отступы между слайдами

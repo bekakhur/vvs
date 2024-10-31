@@ -40,7 +40,7 @@ const page = () => {
       <div className="text-2xl md:text-5xl bg-black border-t border-opacity-10 border-white md:border-none md:bg-transparent sticky top-[40vh] md:top-auto py-6 px-6 z-50 left-6 md:bottom-16 md:absolute uppercase font-bold">
         <h2>Liverpool</h2>
       </div>
-      <div className="flex md:hidden flex-col gap-2 mx-6">
+      <Link href={'/player'} className="flex md:hidden bg-black flex-col gap-2 mx-6">
         {images.map((e) => {
           return (
             <div className="w-full h-64">
@@ -52,7 +52,7 @@ const page = () => {
             </div>
           );
         })}
-      </div>
+      </Link>
     </div>
   );
 };
