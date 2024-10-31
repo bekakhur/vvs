@@ -24,7 +24,7 @@ const page = () => {
 
   return (
     <div className="text-white overscroll-none">
-      <div className="w-full text-white h-[40vh] z-50 md:h-[100vh] md:overflow-hidden sticky top-0 bg-black flex justify-center items-center">
+      <div className="w-full text-white h-[40vh] z-50 md:h-[100vh] md:overflow-hidden sticky top-0 bg-black flex flex-col justify-center items-center">
         <button
           onClick={handleBack}
           className="absolute top-4 left-6 text-4xl md:text-6xl"
@@ -36,11 +36,22 @@ const page = () => {
           alt=""
           className="z-50 h-16 w-16 md:h-28 md:w-28 md:mb-16 mb-8"
         />
+        <div className="flex gap-4 text-black">
+          <button className="px-4 py-2 bg-white w-24 hover:bg-zinc-300 rounded-sm">
+            Sign In
+          </button>
+          <button className="px-4 py-2 bg-white w-24 hover:bg-zinc-300 rounded-sm">
+            Sign Up
+          </button>
+        </div>
       </div>
       <div className="text-2xl md:text-5xl bg-black border-t border-opacity-10 border-white md:border-none md:bg-transparent sticky top-[40vh] md:top-auto py-6 px-6 z-50 left-6 md:bottom-16 md:absolute uppercase font-bold">
         <h2>Liverpool</h2>
       </div>
-      <Link href={'/player'} className="flex md:hidden bg-black flex-col gap-2 mx-6">
+      <Link
+        href={"/player"}
+        className="flex md:hidden bg-black flex-col gap-2 mx-6"
+      >
         {images.map((e) => {
           return (
             <div className="w-full h-64">
