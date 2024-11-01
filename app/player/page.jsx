@@ -56,12 +56,18 @@ const page = () => {
       >
         {images.map((e) => {
           return (
-            <div className="w-full h-64">
+            <div className="w-full relative h-64">
               <img
                 src={e}
                 alt=""
-                className=" object-cover grayscale w-full h-64"
+                className="opacity-80 object-cover grayscale w-full h-64"
               />
+              <h2 className="absolute text-white text-2xl font-semibold bottom-2 left-2">
+                Liverpool
+              </h2>
+              <div className="absolute top-2 right-2 bg-black rounded-sm opacity-80">
+                <span className="py-1 px-2 text-white">2:14:03</span>
+              </div>
             </div>
           );
         })}
