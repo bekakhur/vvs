@@ -46,7 +46,7 @@ const page = () => {
           </button>
         </div>
       </div>
-      <div className="text-2xl sm:text-5xl bg-black border-t border-opacity-10 border-white sm:border-none sm:bg-transparent sticky top-[40vh] sm:top-auto py-6 px-6 z-50 left-6 sm:absolute uppercase font-bold">
+      <div className="text-2xl sm:text-5xl bg-black border-t border-opacity-10 border-white sm:border-none sm:bg-transparent sticky top-[40vh] sm:top-auto py-6 px-6 z-50 left-6 sm:hidden uppercase font-bold">
         <h2>Liverpool</h2>
       </div>
 
@@ -56,18 +56,23 @@ const page = () => {
       >
         {images.map((e) => {
           return (
-            <div className="w-full relative h-64">
+            <div className="w-full flex justify-center items-center relative h-64">
               <img
                 src={e}
                 alt=""
-                className="opacity-80 object-cover grayscale w-full h-64"
+                className="opacity-70 object-cover grayscale w-full h-64"
               />
               <h2 className="absolute text-white text-2xl font-semibold bottom-2 left-2">
                 Liverpool
               </h2>
               <div className="absolute top-2 right-2 bg-black rounded-sm opacity-80">
-                <span className="py-1 px-2 text-white">2:14:03</span>
+                <span className="py-1 px-2 text-sm text-white">2:14:03</span>
               </div>
+              <img
+                src="./lock.svg"
+                className=" h-20 w-20 mb-6 absolute opacity-80"
+                alt=""
+              />
             </div>
           );
         })}

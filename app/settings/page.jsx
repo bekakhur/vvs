@@ -24,7 +24,7 @@ const page = () => {
           allow="web-share, autoplay"
         ></iframe>
       </div>
-      <div className="text-2xl sm:text-5xl bg-black border-t border-opacity-10 border-white sm:border-none sm:bg-transparent sticky top-[40vh] sm:top-auto py-6 px-6 z-50 left-6 sm:absolute uppercase font-bold">
+      <div className="text-2xl sm:text-5xl bg-black border-t border-opacity-10 border-white sm:border-none sm:bg-transparent sticky top-[40vh] sm:top-auto py-6 px-6 z-50 left-6 sm:hidden uppercase font-bold">
         <h2>Liverpool</h2>
       </div>
 
