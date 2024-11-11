@@ -1,18 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
+import Banner from "@/components/Banner";
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col items-center gap-20 md:gap-32 min-h-screen">
-      <Image
-        src="/time_enemy.jpg"
-        width={1400}
-        height={1400}
-        objectFit="cover"
-        alt="joker"
-        className="h-[60vh] sm:h-[100vh] grayscale object-cover w-auto"
-      />
+    <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
+      <Banner img="/time_enemy.jpg" />
       <Carousel />
       <Carousel />
       <Carousel />

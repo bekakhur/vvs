@@ -14,7 +14,7 @@ const navList = [
     title: "cartoons",
   },
   {
-    title: "settings",
+    title: "account",
   },
 ];
 

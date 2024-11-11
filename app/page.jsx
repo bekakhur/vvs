@@ -1,11 +1,12 @@
+import Banner from "@/components/Banner";
 import Carousel from "@/components/Carousel";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full shadow-yellow-300 flex flex-col gap-20 md:gap-32 items-center min-h-screen">
-      <div className="bg-black shadow-2xl relative shadow-zinc-900 flex items-center justify-center w-full h-[60vh] sm:h-[100vh]">
+    <div className="w-full flex flex-col gap-16 md:gap-24  min-h-screen">
+      {/* <div className="bg-black shadow-2xl relative shadow-zinc-900 flex items-center justify-center w-full h-[60vh] sm:h-[100vh]">
         <Image
           src="/joker.jpg"
           width={500}
@@ -20,7 +21,8 @@ export default function Home() {
         >
           WATCH NOW
         </Link>
-      </div>
+      </div> */}
+      <Banner img="/joker.jpg" />
       <Carousel />
       <Carousel />
       <Carousel />

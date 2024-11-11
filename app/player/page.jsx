@@ -37,9 +37,12 @@ const page = () => {
           className="z-50 h-16 w-16 md:h-28 md:w-28 md:mb-16 mb-8"
         />
         <div className="flex gap-2 items-center font-semibold  text-white">
-          <button className="px-4 py-2 bg-gradient-to-t w-24 from-yellow-800 to-yellow-600 hover:bg-green-200 rounded-sm">
+          <Link
+            href={"/playerA"}
+            className="px-4 py-2 bg-gradient-to-t w-24 from-yellow-800 to-yellow-600 hover:bg-green-200 rounded-sm"
+          >
             Sign In
-          </button>
+          </Link>
           <span>OR</span>
           <button className="px-4 py-2 bg-gradient-to-t w-24 from-green-800 to-green-600  hover:bg-zinc-300 rounded-sm">
             Sign Up
