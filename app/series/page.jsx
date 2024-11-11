@@ -24,9 +24,9 @@ const page = () => {
         className="h-[60vh] md:h-[100vh] w-auto object-cover"
       /> */}
       <Banner img="/knight.jpg" />
-      <Carousel />
-      <Carousel />
-      <Carousel />
+      <Carousel title="50s" />
+      <Carousel title="40s" />
+      <Carousel title="30s" />
     </div>
   );
 };

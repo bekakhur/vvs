@@ -23,9 +23,9 @@ export default function Home() {
         </Link>
       </div> */}
       <Banner img="/joker.jpg" />
-      <Carousel />
-      <Carousel />
-      <Carousel />
+      <Carousel title="MOVIES" />
+      <Carousel title="SERIES" />
+      <Carousel title="CARTOONS" />
     </div>
   );
 }

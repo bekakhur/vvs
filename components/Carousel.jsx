@@ -16,7 +16,7 @@ const images = [
 
 const slidesToShow = 3;
 
-const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
+const Carousel = ({ slidesToShow = 3, gap = 20, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToScroll, setSlidesToScroll] = useState(slidesToShow);
 
@@ -56,9 +56,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20 }) => {
 
   return (
     <div className="w-full h-auto mb-8 flex flex-col items-center gap-8 px-4">
-      <h2 className="text-white uppercase font-bold text-xl md:text-3xl">
-        Movies
-      </h2>
+      <h2 className="text-white font-bold text-xl md:text-3xl">{title}</h2>
       <div className="relative w-full bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
         <div
           className="flex transition-transform duration-500 bg-zinc-900 ease-in-out"

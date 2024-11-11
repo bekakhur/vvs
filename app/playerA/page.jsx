@@ -38,7 +38,7 @@ const page = () => {
               <img
                 src={e}
                 alt=""
-                className=" object-cover grayscale w-full h-64"
+                className="opacity-70 object-cover grayscale w-full h-64"
               />
               <h2 className="absolute text-white text-2xl font-semibold bottom-2 left-2">
                 City Lights
