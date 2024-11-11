@@ -5,13 +5,13 @@ import { useState } from "react";
 
 const navList = [
   {
-    title: "video",
+    title: "movies",
   },
   {
-    title: "images",
+    title: "series",
   },
   {
-    title: "audio",
+    title: "cartoons",
   },
   {
     title: "settings",
