@@ -23,6 +23,7 @@ export default function Home() {
         </Link>
       </div> */}
       <Banner img="/joker.jpg" />
+      <Carousel title="PICK OF THE WEEK" />
       <Carousel title="MOVIES" />
       <Carousel title="SERIES" />
       <Carousel title="CARTOONS" />
