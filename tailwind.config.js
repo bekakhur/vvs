@@ -12,7 +12,7 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       animation: {
-        zoom: "zoom 25s ease-in-out infinite", // 10 секунд, бесконечный цикл
+        zoom: "zoom 20s ease-in-out infinite", // 10 секунд, бесконечный цикл
       },
       keyframes: {
         zoom: {
