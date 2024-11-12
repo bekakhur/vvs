@@ -11,6 +11,15 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        zoom: "zoom 25s ease-in-out infinite", // 10 секунд, бесконечный цикл
+      },
+      keyframes: {
+        zoom: {
+          "0%, 95%, 100%": { transform: "scale(1)" }, // Начальная и конечная точка (отдалено)
+          "45%": { transform: "scale(1.4)" }, // Максимальное приближение на середине цикла
+        },
+      },
     },
   },
   plugins: [],
