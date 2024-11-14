@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Carousel from "@/components/Carousel";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,6 +28,7 @@ export default function Home() {
       <Carousel title="MOVIES" />
       <Carousel title="SERIES" />
       <Carousel title="CARTOONS" />
+      <Footer />
     </div>
   );
 }

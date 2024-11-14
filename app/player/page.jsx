@@ -53,13 +53,13 @@ const page = () => {
         <h2>The Henpecked Duck</h2>
       </div>
 
-      <Link
-        href={"/player"}
-        className="flex sm:hidden bg-black flex-col gap-2 mx-6"
-      >
+      <div className="flex sm:hidden bg-black pb-4 flex-col gap-2 mx-6">
         {images.map((e) => {
           return (
-            <div className="w-full flex justify-center items-center relative h-64">
+            <Link
+              href={"/player"}
+              className="w-full flex justify-center items-center relative h-64"
+            >
               <img
                 src={e}
                 alt=""
@@ -76,10 +76,10 @@ const page = () => {
                 className=" h-20 w-20 mb-6 absolute opacity-80"
                 alt=""
               />
-            </div>
+            </Link>
           );
         })}
-      </Link>
+      </div>
     </div>
   );
 };

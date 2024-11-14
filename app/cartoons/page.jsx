@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
       <Carousel title="50s" />
       <Carousel title="40s" />
       <Carousel title="30s" />
+      <Footer />
     </div>
   );
 };

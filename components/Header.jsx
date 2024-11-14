@@ -23,6 +23,13 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      // Отключаем прокрутку страницы
+      document.body.style.overflow = "hidden";
+    } else {
+      // Включаем прокрутку страницы
+      document.body.style.overflow = "auto";
+    }
   };
 
   return (
