@@ -23,7 +23,7 @@ export default function Home() {
           WATCH NOW
         </Link>
       </div> */}
-      <Banner img="/joker.jpg" />
+      <Banner img="/joker.jpg" title="joker" />
       <Carousel title="PICK OF THE WEEK" />
       <Carousel title="MOVIES" />
       <Carousel title="SERIES" />

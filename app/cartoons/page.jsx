@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const page = () => {
   return (
     <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
-      <Banner img="/detachment.jpg" />
+      <Banner img="/detachment.jpg" title="detachment" />
       <Carousel title="50s" />
       <Carousel title="40s" />
       <Carousel title="30s" />

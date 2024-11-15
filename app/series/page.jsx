@@ -24,7 +24,7 @@ const page = () => {
         alt="joker"
         className="h-[60vh] md:h-[100vh] w-auto object-cover"
       /> */}
-      <Banner img="/knight.jpg" />
+      <Banner img="/knight.jpg" title="knight" />
       <Carousel title="50s" />
       <Carousel title="40s" />
       <Carousel title="30s" />
