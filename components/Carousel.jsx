@@ -16,9 +16,45 @@ const images = [
 
 const slidesToShow = 3;
 
-const Carousel = ({ slidesToShow = 3, gap = 20, title }) => {
+const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToScroll, setSlidesToScroll] = useState(slidesToShow);
+
+  const [thumbnails, setThumbnails] = useState([]);
+  // замените на настоящие идентификаторы видео
+
+  useEffect(() => {
+    const fetchThumbnails = async () => {
+      const results = await Promise.all(
+        videoIds.map(async (videoId) => {
+          const url = `https://api.dailymotion.com/video/${videoId}?fields=thumbnail_240_url,title,duration,id`;
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return {
+              thumbnail: data.thumbnail_240_url,
+              title: data.title,
+              duration: data.duration,
+              id: data.id,
+            };
+          } catch (error) {
+            console.error(`Ошибка загрузки для видео ${videoId}:`, error);
+            return null;
+          }
+        })
+      );
+
+      setThumbnails(results.filter((item) => item !== null));
+    };
+
+    fetchThumbnails();
+  }, []);
+
+  const formatDuration = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+  };
 
   // Обработка изменения размера экрана для адаптивности
   useEffect(() => {
@@ -57,7 +93,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title }) => {
   return (
     <div className="w-full h-auto mb-8 flex flex-col items-center gap-8 px-4">
       <h2 className="text-white font-semibold text-4xl sm:text-5xl">{title}</h2>
-      <div className="relative w-full bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
+      <div className="relative w-full h-48 md:h-72 bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
         <div
           className="flex transition-transform duration-500 bg-zinc-900 ease-in-out"
           style={{
@@ -65,11 +101,11 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title }) => {
             gap: `${gap}px`, // Задаём отступы между слайдами
           }}
         >
-          {images.map((image, index) => (
+          {thumbnails.map((video, index) => (
             <Link
-              href={"/player"}
+              href={`/player/${video.id}`}
               key={index}
-              className="flex-shrink-0 relative grayscale flex justify-center bg-black items-center"
+              className="flex-shrink-0 relative grayscale h-40 md:h-64 flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
               style={{
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}
@@ -80,15 +116,15 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title }) => {
                 alt=""
               />
               <div className="top-2 right-2 px-2 py-1 bg-opacity-60 text-sm bg-black z-50 absolute text-white">
-                <p>2:14:03</p>
+                <p>{formatDuration(video.duration)}</p>
               </div>
               <img
-                src={image}
+                src={video.thumbnail}
                 alt={`Slide ${index + 1}`}
                 className="w-full cursor-pointer opacity-70 h-40 object-cover md:h-64"
               />
               <h3 className="text-white text-xl font-semibold absolute left-2 bottom-1 md:bottom-2">
-                City Lights
+                {video.title}
               </h3>
             </Link>
           ))}

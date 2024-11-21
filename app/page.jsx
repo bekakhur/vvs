@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
+const pickOfTheWeek = ["x66aov7", "x6aiala", "x6ku1og"];
+const movies = ["x77n9jw"];
+
 export default function Home() {
   return (
     <div className="w-full flex flex-col gap-16 md:gap-24  min-h-screen">
@@ -24,10 +27,10 @@ export default function Home() {
         </Link>
       </div> */}
       <Banner img="/joker.jpg" title="joker" />
-      <Carousel title="PICK OF THE WEEK" />
-      <Carousel title="MOVIES" />
-      <Carousel title="SERIES" />
-      <Carousel title="CARTOONS" />
+      <Carousel title="PICK OF THE WEEK" videoIds={pickOfTheWeek} />
+      <Carousel title="MOVIES" videoIds={movies} />
+      <Carousel title="SERIES" videoIds={movies} />
+      <Carousel title="CARTOONS" videoIds={movies} />
       <Footer />
     </div>
   );
