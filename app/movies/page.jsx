@@ -10,7 +10,7 @@ const movies = ["x77n9jw"];
 const page = () => {
   return (
     <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
-      <Banner img="/time_enemy.jpg" title="time enemy" />
+      <Banner img="/time_enemy.jpg" title="time enemy" videoId="x66aov7" />
       <Carousel title="PICK OF THE WEEK" videoIds={pickOfTheWeek} />
       <Carousel title="MOVIES" videoIds={movies} />
       <Carousel title="SERIES" videoIds={movies} />
