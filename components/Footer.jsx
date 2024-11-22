@@ -2,7 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full h-20 bg-gradient-to-t from-black via-black to-transparent via-10%"></div>
+    <div className="w-full relative flex">
+      <div className="w-[50%] h-20 bg-gradient-to-tr from-black via-transparent via-65% to-transparent"></div>
+      <div className="w-[50%] h-20 bg-gradient-to-tl from-black via-transparent via-65% to-transparent"></div>
+    </div>
   );
 };
 
