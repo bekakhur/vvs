@@ -81,7 +81,7 @@ const page = ({ params }) => {
         ></iframe>
       </div>
       <div className="text-2xl sm:text-5xl bg-black border-t border-opacity-10 border-white sm:border-none sm:bg-transparent sticky top-[40vh] sm:top-auto py-6 px-6 z-50 left-6 sm:hidden font-bold">
-        <h2>{videoDetails?.title || ""}</h2>
+        <h2>{videoDetails?.title || "..."}</h2>
       </div>
 
       <div className="flex sm:hidden bg-black flex-col gap-2 mx-6 pb-4">

@@ -4,8 +4,38 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
-const pickOfTheWeek = ["x66aov7", "x6aiala", "x6ku1og"];
-const movies = ["x77n9jw"];
+const pickOfTheWeek = [
+  "x66aov7",
+  "x6aiala",
+  "x6ku1og",
+  "x6vvwea",
+  "x6vw7fl",
+  "x6w35la",
+  "x6rr15m",
+];
+const movies = ["x77n9jw", "x6pt1q8", "x6qbv6p"];
+
+const m40 = [
+  "x6ukg92",
+  "x6wacwi",
+  "x6ukiox",
+  "x6py71o",
+  "x6vna3z",
+  "x6uejo2",
+  "x6qocf1",
+  "x6vpalx",
+];
+
+const m30 = [
+  "x6xh1zk",
+  "x6q5p0r",
+  "x36ycr3",
+  "x6vw7fl",
+  "x6w35la",
+  "x8mqi7b",
+  "x8txj9k",
+  "x8ucf1y",
+];
 
 export default function Home() {
   return (
