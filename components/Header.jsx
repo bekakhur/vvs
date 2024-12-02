@@ -79,7 +79,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="min-w-12 flex items-center justify-center">
+            <div className="min-w-20 flex items-center justify-center">
               <SignedOut>
                 <SignInButton />
               </SignedOut>
