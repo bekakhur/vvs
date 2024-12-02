@@ -1,8 +1,13 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
-import Head from "next/head";
-import Footer from "@/components/Footer";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  ClerkProvider,
+} from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,21 +30,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <meta name="theme-color" content="#000000" />
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
+          <meta name="theme-color" content="#000000" />
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      </head>
-      <body className="bg-gradient-to-r select-none from-black via-zinc-600 to-black">
-        <Header />
-        <div>{children}</div>
-      </body>
-    </html>
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        </head>
+        <body className="bg-gradient-to-r select-none from-black via-zinc-600 to-black">
+          <Header />
+
+          <div>{children}</div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

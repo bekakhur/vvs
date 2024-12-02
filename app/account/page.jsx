@@ -1,6 +1,6 @@
 import React from "react";
 
-const menuList = ["subscriptions", "info", "payment", "preferences"];
+const menuList = ["info", "subscriptions", "payment", "preferences"];
 
 const page = () => {
   return (

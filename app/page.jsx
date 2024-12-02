@@ -57,10 +57,10 @@ export default function Home() {
         </Link>
       </div> */}
       <Banner img="/joker.jpg" title="joker" videoId="x6ku1og" />
-      <Carousel title="PICK OF THE WEEK" videoIds={pickOfTheWeek} />
-      <Carousel title="MOVIES" videoIds={movies} />
-      <Carousel title="SERIES" videoIds={movies} />
-      <Carousel title="CARTOONS" videoIds={movies} />
+      <Carousel title="wild west" videoIds={pickOfTheWeek} />
+      <Carousel title="new york" videoIds={movies} />
+      <Carousel title="chicago" videoIds={movies} />
+      <Carousel title="oscar winners" videoIds={movies} />
       <Footer />
     </div>
   );

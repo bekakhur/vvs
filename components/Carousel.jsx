@@ -1,5 +1,6 @@
 "use client";
 
+import { SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -92,7 +93,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
 
   return (
     <div className="w-full h-auto mb-8 flex flex-col items-center gap-8 px-4">
-      <h2 className="text-white font-semibold text-[25px] sm:text-[50px]">
+      <h2 className="text-white font-semibold uppercase text-[25px] sm:text-[50px]">
         {title}
       </h2>
       <div className="relative w-full h-48 md:h-72 bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
@@ -112,11 +113,13 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}
             >
-              <img
-                src="./lock.svg"
-                className=" h-20 w-20 z-50 mb-4 absolute opacity-80"
-                alt=""
-              />
+              <SignedOut>
+                <img
+                  src="./lock.svg"
+                  className=" h-20 w-20 z-50 mb-4 absolute opacity-80"
+                  alt=""
+                />
+              </SignedOut>
               <div className="top-2 right-2 px-2 py-1 bg-opacity-60 text-sm bg-black z-50 absolute text-white">
                 <p>{formatDuration(video.duration)}</p>
               </div>

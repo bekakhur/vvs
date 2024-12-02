@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const navList = [
   {
@@ -70,18 +71,29 @@ const Navbar = () => {
             </button>
           </div>
           {/* Links for desktop view */}
-          <div className="hidden lg:flex gap-6 lg:items-center lg:space-x-4">
+          <div className="hidden lg:flex gap-6 text-white font-semibold capitalize items-center lg:space-x-4">
             {navList.map((e) => {
               return (
-                <Link
-                  href={`/${e.title}`}
-                  key={e.title}
-                  className="text-white font-semibold uppercase"
-                >
+                <Link href={`/${e.title}`} key={e.title}>
                   {e.title}
                 </Link>
               );
             })}
+            <div className="min-w-12 flex items-center justify-center">
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton
+                  appearance={{
+                    elements: {
+                      userButtonAvatarBox:
+                        "h-12 w-12 shadow-xl shadow-black rounded-full",
+                    },
+                  }}
+                />
+              </SignedIn>
+            </div>
           </div>
         </div>
       </div>
@@ -110,13 +122,29 @@ const Navbar = () => {
             />
           </svg>
         </button>
+        <div className="absolute uppercase left-4 sm:left-6 top-3">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <div className="w-12 shadow-xl shadow-black rounded-full">
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: "h-12 w-12",
+                  },
+                }}
+              />
+            </div>
+          </SignedIn>
+        </div>
         {navList.map((e) => {
           return (
             <Link
               onClick={toggleMenu}
               href={`/${e.title}`}
               key={e.title}
-              className="text-white mt-6 uppercase"
+              className="text-white mt-10 uppercase"
             >
               {e.title}
             </Link>
