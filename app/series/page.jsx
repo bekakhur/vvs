@@ -28,7 +28,7 @@ const page = () => {
         className="h-[60vh] md:h-[100vh] w-auto object-cover"
       /> */}
       <Banner img="/knight.jpg" title="knight" videoId="x6aiala" />
-      <Carousel title="PICK OF THE WEEK!" videoIds={pickOfTheWeek} />
+      <Carousel title="PICK OF THE WEEK" videoIds={pickOfTheWeek} />
       <Carousel title="MOVIES" videoIds={movies} />
       <Carousel title="SERIES" videoIds={movies} />
       <Footer />
