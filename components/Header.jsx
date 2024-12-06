@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUp,
+  UserButton,
+} from "@clerk/nextjs";
 
 const navList = [
   {
@@ -81,7 +87,7 @@ const Navbar = () => {
             })}
             <div className="min-w-20 flex items-center justify-center">
               <SignedOut>
-                <SignInButton />
+                <SignInButton mode="modal" />
               </SignedOut>
               <SignedIn>
                 <UserButton
