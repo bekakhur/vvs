@@ -128,9 +128,16 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <div className="absolute uppercase left-4 sm:left-6 top-3">
+        <div className="absolute bottom-24">
           <SignedOut>
-            <SignInButton />
+            <SignInButton
+              mode="modal"
+              appearance={{
+                elements: {
+                  formButtonPrimary: "bg-slate-500 hover:bg-slate-400 text-sm",
+                },
+              }}
+            />
           </SignedOut>
           <SignedIn>
             <div className="w-12 shadow-xl shadow-black rounded-full">
@@ -150,7 +157,7 @@ const Navbar = () => {
               onClick={toggleMenu}
               href={`/${e.title}`}
               key={e.title}
-              className="text-white mt-10 uppercase"
+              className="text-white mt-10 capitalize"
             >
               {e.title}
             </Link>
