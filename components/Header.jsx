@@ -20,9 +20,6 @@ const navList = [
   {
     title: "cartoons",
   },
-  {
-    title: "account",
-  },
 ];
 
 const Navbar = () => {
@@ -40,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-b z-50 text-2xl fixed w-full font-light from-black to-transparent">
+    <nav className="bg-gradient-to-b z-50 uppercase text-2xl fixed w-full font-light from-black to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20 transition-all">
           <a href="/" className="font-bold text-4xl text-yellow-500">
@@ -77,7 +74,7 @@ const Navbar = () => {
             </button>
           </div>
           {/* Links for desktop view */}
-          <div className="hidden lg:flex gap-6 text-white font-semibold capitalize items-center lg:space-x-4">
+          <div className="hidden lg:flex gap-6 text-white font-semibold items-center lg:space-x-4">
             {navList.map((e) => {
               return (
                 <Link href={`/${e.title}`} key={e.title}>
@@ -85,9 +82,11 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="min-w-20 flex items-center justify-center">
+            <div className="min-w-24 flex items-center justify-center">
               <SignedOut>
-                <SignInButton mode="modal" />
+                <SignInButton mode="modal">
+                  <button className="uppercase">sign in</button>
+                </SignInButton>
               </SignedOut>
               <SignedIn>
                 <UserButton
@@ -130,14 +129,11 @@ const Navbar = () => {
         </button>
         <div className="absolute bottom-24">
           <SignedOut>
-            <SignInButton
-              mode="modal"
-              appearance={{
-                elements: {
-                  formButtonPrimary: "bg-slate-500 hover:bg-slate-400 text-sm",
-                },
-              }}
-            />
+            <SignInButton mode="modal">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
+                sign in
+              </button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
             <div className="w-12 shadow-xl shadow-black rounded-full">
@@ -157,7 +153,7 @@ const Navbar = () => {
               onClick={toggleMenu}
               href={`/${e.title}`}
               key={e.title}
-              className="text-white mt-10 capitalize"
+              className="text-white mt-10"
             >
               {e.title}
             </Link>

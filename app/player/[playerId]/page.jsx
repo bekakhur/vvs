@@ -1,6 +1,6 @@
 "use client";
 
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,16 @@ const images = [
   "./detachment.jpg",
 ];
 
-const videoIds = ["x66aov7", "x6aiala", "x6ku1og"];
+const videoIds = [
+  "x6xh1zk",
+  "x6q5p0r",
+  "x36ycr3",
+  "x6vw7fl",
+  "x6w35la",
+  "x8mqi7b",
+  "x8txj9k",
+  "x8ucf1y",
+];
 
 const page = ({ params }) => {
   const id = params.playerId;
@@ -104,16 +113,11 @@ const page = ({ params }) => {
             className="z-50 h-16 w-16 md:h-28 md:w-28 md:mb-16 mb-8"
           />
           <div className="flex gap-2 items-center font-semibold  text-white">
-            <Link
-              href={"/playerA"}
-              className="px-4 py-2 bg-gradient-to-t w-24 from-yellow-800 to-yellow-600 hover:bg-green-200 rounded-sm"
-            >
-              Sign In
-            </Link>
-            <span>OR</span>
-            <button className="px-4 py-2 bg-gradient-to-t w-24 from-green-800 to-green-600  hover:bg-zinc-300 rounded-sm">
-              Sign Up
-            </button>
+            <SignInButton mode="modal">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
+                sign in
+              </button>
+            </SignInButton>
           </div>
         </div>
       </SignedOut>

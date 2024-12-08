@@ -40,7 +40,6 @@ export default function RootLayout({ children }) {
         </head>
         <body className="bg-gradient-to-r select-none from-black via-zinc-800 to-black">
           <Header />
-
           <div>{children}</div>
         </body>
       </html>
