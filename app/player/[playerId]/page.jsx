@@ -114,7 +114,7 @@ const page = ({ params }) => {
           />
           <div className="flex gap-2 items-center font-semibold  text-white">
             <SignInButton mode="modal">
-              <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-700 to-yellow-500 font-light rounded-sm">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-500 font-light rounded-sm">
                 sign in
               </button>
             </SignInButton>

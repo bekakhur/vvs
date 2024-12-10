@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden sm:overflow-auto flex pl-10 pt-8 flex-col inset-y-0 right-0 w-[300px] text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`fixed overflow-hidden sm:overflow-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden`}
       >
@@ -127,7 +127,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex ml-16 flex-col">
           {navList.map((e) => {
             return (
               <Link
@@ -144,7 +144,7 @@ const Navbar = () => {
         <div className=" portrait:absolute portrait:bottom-[15vh] landscape:my-10">
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-700 to-yellow-500 font-light rounded-sm">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-500 font-light rounded-sm">
                 sign in
               </button>
             </SignInButton>
@@ -154,7 +154,7 @@ const Navbar = () => {
               showName // Включаем отображение имени пользователя
               appearance={{
                 elements: {
-                  userButtonPopoverCard: "px-20 rounded-[50px]",
+                  userButtonPopoverCard: "pl-8 pr-16",
                   userButtonTrigger: {
                     backgroundColor: "white", // Белый фон кнопки
                     borderRadius: "50px", // Скругление для овальной формы
