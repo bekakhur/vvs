@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         </head>
-        <body className="bg-gradient-to-r select-none landscape:bg-black overscroll-y-none from-black via-zinc-800 to-black">
+        <body className="bg-gradient-to-r select-none landscape:bg-black portrait:bg-black overscroll-y-none from-black via-zinc-800 to-black">
           <Header />
           <div>{children}</div>
         </body>

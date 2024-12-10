@@ -139,7 +139,7 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <div className="mt-24 mb-24">
+        <div className=" portrait:absolute portrait:bottom-[15vh] landscape:my-10">
           <SignedOut>
             <SignInButton mode="modal">
               <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
@@ -152,6 +152,7 @@ const Navbar = () => {
               showName // Включаем отображение имени пользователя
               appearance={{
                 elements: {
+                  userButtonPopoverCard: "px-10 rounded-[50px]",
                   userButtonTrigger: {
                     backgroundColor: "white", // Белый фон кнопки
                     borderRadius: "50px", // Скругление для овальной формы
