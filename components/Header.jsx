@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`fixed overflow-hidden sm:overflow-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden`}
       >
@@ -127,26 +127,6 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <div className="absolute bottom-24">
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
-                sign in
-              </button>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <div className="w-12 shadow-xl shadow-black rounded-full">
-              <UserButton
-                appearance={{
-                  elements: {
-                    userButtonAvatarBox: "h-12 w-12",
-                  },
-                }}
-              />
-            </div>
-          </SignedIn>
-        </div>
         {navList.map((e) => {
           return (
             <Link
@@ -159,6 +139,44 @@ const Navbar = () => {
             </Link>
           );
         })}
+        <div className="mt-24 mb-24">
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
+                sign in
+              </button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton
+              showName // Включаем отображение имени пользователя
+              appearance={{
+                elements: {
+                  userButtonTrigger: {
+                    backgroundColor: "white", // Белый фон кнопки
+                    borderRadius: "50px", // Скругление для овальной формы
+                    padding: "10px 15px", // Внутренние отступы
+                    border: "1px solid #e5e7eb", // Лёгкая рамка
+                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Тень для объёма
+                    display: "flex", // Выравнивание
+                    alignItems: "center",
+                    gap: "10px", // Расстояние между аватаром и именем
+                    cursor: "pointer",
+                  },
+                  userButtonAvatarBox: {
+                    width: "32px", // Размер аватара
+                    height: "32px",
+                  },
+                  userButtonName: {
+                    color: "#374151", // Цвет имени (серый)
+                    fontSize: "14px", // Размер текста
+                    fontWeight: "500", // Полужирный текст
+                  },
+                },
+              }}
+            />
+          </SignedIn>
+        </div>
       </div>
     </nav>
   );
