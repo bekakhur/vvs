@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden sm:overflow-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`fixed overflow-hidden sm:overflow-auto flex pl-10 pt-8 flex-col inset-y-0 right-0 w-[300px] text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden`}
       >
@@ -127,22 +127,24 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        {navList.map((e) => {
-          return (
-            <Link
-              onClick={toggleMenu}
-              href={`/${e.title}`}
-              key={e.title}
-              className="text-white mt-10"
-            >
-              {e.title}
-            </Link>
-          );
-        })}
+        <div className="w-full flex flex-col">
+          {navList.map((e) => {
+            return (
+              <Link
+                onClick={toggleMenu}
+                href={`/${e.title}`}
+                key={e.title}
+                className="text-white mt-10"
+              >
+                {e.title}
+              </Link>
+            );
+          })}
+        </div>
         <div className=" portrait:absolute portrait:bottom-[15vh] landscape:my-10">
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="uppercase px-4 py-2 bg-gradient-to-t from-green-800 to-green-400 font-light rounded-sm">
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-700 to-yellow-500 font-light rounded-sm">
                 sign in
               </button>
             </SignInButton>
@@ -152,7 +154,7 @@ const Navbar = () => {
               showName // Включаем отображение имени пользователя
               appearance={{
                 elements: {
-                  userButtonPopoverCard: "px-10 rounded-[50px]",
+                  userButtonPopoverCard: "px-20 rounded-[50px]",
                   userButtonTrigger: {
                     backgroundColor: "white", // Белый фон кнопки
                     borderRadius: "50px", // Скругление для овальной формы
