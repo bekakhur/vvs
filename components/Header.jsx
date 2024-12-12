@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className="bg-gradient-to-b z-50 uppercase text-2xl fixed w-full font-light from-black via-black/60 via-60% to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between relative items-center h-16 lg:h-20 transition-all">
-          <a
+          <Link
             href="/"
             className="font-bold hidden lg:flex text-4xl text-yellow-500"
           >
@@ -50,8 +50,8 @@ const Navbar = () => {
               <span className="text-yellow-400">V</span>
               <span>S</span>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             href="/"
             className="absolute lg:hidden transform -translate-x-1/2 left-[50%]"
           >
@@ -60,7 +60,7 @@ const Navbar = () => {
               <span className="text-yellow-400">V</span>
               <span>S</span>
             </div>
-          </a>
+          </Link>
           {/* Menu button for mobile view */}
           <div className="flex items-center lg:hidden">
             <button
@@ -87,7 +87,7 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <a href="/account" className="lg:hidden text-white">
+          <Link href="/account" className="lg:hidden text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ const Navbar = () => {
                 clip-rule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
           {/* Links for desktop view */}
           <div className="hidden lg:flex gap-12 text-white font-medium tracking-wide items-center">
             {navList.map((e) => {
@@ -129,7 +129,7 @@ const Navbar = () => {
               </SignedIn>
             </div> */}
           </div>
-          <a href="/account" className="lg:flex hidden text-white">
+          <Link href="/account" className="lg:flex hidden text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -142,12 +142,12 @@ const Navbar = () => {
                 clip-rule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden sm:overflow-y-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`fixed overflow-hidden sm:overflow-y-auto flex pt-8 flex-col inset-y-0 pl-10 left-0 w-[300px] text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
           isOpen ? "-translate-x-0" : "-translate-x-full"
         } lg:hidden`}
       >
@@ -170,7 +170,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <div className="w-full flex ml-16 flex-col">
+        <div className="w-full flex flex-col">
           {navList.map((e) => {
             return (
               <Link
@@ -184,8 +184,8 @@ const Navbar = () => {
             );
           })}
         </div>
-        <div className=" portrait:absolute portrait:bottom-[10vh] landscape:my-32">
-          <SignedOut>
+        <div className="flex gap-6 items-center portrait:absolute portrait:bottom-[10vh] landscape:mt-40 landscape:mb-10">
+          {/* <SignedOut>
             <SignInButton mode="modal">
               <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-500 font-light rounded-sm">
                 sign in
@@ -198,7 +198,7 @@ const Navbar = () => {
                 sign out
               </button>
             </SignOutButton>
-            {/* <UserButton
+            <UserButton
               showName // Включаем отображение имени пользователя
               appearance={{
                 elements: {
@@ -225,8 +225,9 @@ const Navbar = () => {
                   },
                 },
               }}
-            /> */}
-          </SignedIn>
+            /> 
+          </SignedIn> */}
+          <p className="text-gray-500 text-xl">2.22.1</p>
         </div>
       </div>
     </nav>
