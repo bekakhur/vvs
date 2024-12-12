@@ -56,6 +56,7 @@ export default function Home() {
           WATCH NOW
         </Link>
       </div> */}
+
       <Banner img="/joker.jpg" title="joker" videoId="x6ku1og" />
       <Carousel title="wild west" videoIds={pickOfTheWeek} />
       <Carousel title="new york" videoIds={movies} />

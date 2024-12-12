@@ -6,6 +6,7 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
+  SignOutButton,
   SignUp,
   UserButton,
 } from "@clerk/nextjs";
@@ -39,9 +40,22 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-to-b z-50 uppercase text-2xl fixed w-full font-light from-black to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20 transition-all">
-          <a href="/" className="font-bold text-4xl text-yellow-500">
-            <div className="flex bg-gradient-to-t from-yellow-700 border border-yellow-100 shadow-sm shadow-black via-yellow-900 to-yellow-700 h-10 w-24 justify-center items-center">
+        <div className="flex justify-between relative items-center h-16 lg:h-20 transition-all">
+          <a
+            href="/"
+            className="font-bold hidden lg:flex text-4xl text-yellow-500"
+          >
+            <div className="text-[50px] font-bold text-yellow-500">
+              <span>V</span>
+              <span className="text-yellow-400">V</span>
+              <span>S</span>
+            </div>
+          </a>
+          <a
+            href="/"
+            className="absolute lg:hidden transform -translate-x-1/2 left-[50%]"
+          >
+            <div className="text-[50px] font-bold text-yellow-500">
               <span>V</span>
               <span className="text-yellow-400">V</span>
               <span>S</span>
@@ -73,8 +87,11 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
+          <a href="/account" className="lg:hidden text-white">
+            A
+          </a>
           {/* Links for desktop view */}
-          <div className="hidden lg:flex gap-6 text-white font-semibold items-center lg:space-x-4">
+          <div className="hidden lg:flex gap-12 text-white font-medium tracking-wide items-center">
             {navList.map((e) => {
               return (
                 <Link href={`/${e.title}`} key={e.title}>
@@ -82,7 +99,8 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="min-w-24 flex items-center justify-center">
+
+            {/* <div className="min-w-24 flex items-center justify-center">
               <SignedOut>
                 <SignInButton mode="modal">
                   <button className="uppercase">sign in</button>
@@ -98,14 +116,17 @@ const Navbar = () => {
                   }}
                 />
               </SignedIn>
-            </div>
+            </div> */}
           </div>
+          <a href="/account" className="lg:flex hidden text-white">
+            A
+          </a>
         </div>
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden sm:overflow-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed overflow-hidden sm:overflow-y-auto flex items-center pt-8 flex-col inset-y-0 right-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "-translate-x-0" : "-translate-x-full"
         } lg:hidden`}
       >
         <button
@@ -141,7 +162,7 @@ const Navbar = () => {
             );
           })}
         </div>
-        <div className=" portrait:absolute portrait:bottom-[15vh] landscape:my-10">
+        <div className=" portrait:absolute portrait:bottom-[10vh] landscape:my-10">
           <SignedOut>
             <SignInButton mode="modal">
               <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-500 font-light rounded-sm">
@@ -150,7 +171,12 @@ const Navbar = () => {
             </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton
+            <SignOutButton>
+              <button className="uppercase px-4 py-2 bg-gradient-to-t from-zinc-700 via-zinc-600 to-zinc-700 font-light rounded-sm">
+                sign out
+              </button>
+            </SignOutButton>
+            {/* <UserButton
               showName // Включаем отображение имени пользователя
               appearance={{
                 elements: {
@@ -177,7 +203,7 @@ const Navbar = () => {
                   },
                 },
               }}
-            />
+            /> */}
           </SignedIn>
         </div>
       </div>
