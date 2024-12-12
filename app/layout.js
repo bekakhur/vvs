@@ -2,16 +2,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Poppins } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const oswald = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -38,7 +33,9 @@ export default function RootLayout({ children }) {
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         </head>
-        <body className="bg-gradient-to-r select-none landscape:bg-black portrait:bg-black overscroll-y-none from-black via-zinc-800 to-black">
+        <body
+          className={`${oswald.className} bg-gradient-to-r select-none landscape:bg-black portrait:bg-black overscroll-y-none from-black via-zinc-800 to-black`}
+        >
           <Header />
           <div>{children}</div>
         </body>
