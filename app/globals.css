@@ -5,3 +5,9 @@
 p {
   @apply cursor-pointer;
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

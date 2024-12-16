@@ -147,7 +147,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-hidden sm:overflow-y-auto flex pt-8 flex-col inset-y-0 pl-10 left-0 w-[300px] text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`fixed overflow-hidden sm:overflow-y-auto flex pt-8 flex-col inset-y-0 pl-10 left-0 w-full text-white bg-black shadow-lg transform transition-transform duration-500 ease-in-out ${
           isOpen ? "-translate-x-0" : "-translate-x-full"
         } lg:hidden`}
       >
@@ -184,7 +184,7 @@ const Navbar = () => {
             );
           })}
         </div>
-        <div className="flex gap-6 items-center portrait:absolute portrait:bottom-[10vh] landscape:mt-40 landscape:mb-10">
+        <div className="flex gap-6 items-center portrait:absolute portrait:bottom-[7vh] landscape:mt-40 landscape:mb-10">
           {/* <SignedOut>
             <SignInButton mode="modal">
               <button className="uppercase px-4 py-2 bg-gradient-to-t from-yellow-600 via-yellow-400 to-yellow-500 font-light rounded-sm">
@@ -227,7 +227,7 @@ const Navbar = () => {
               }}
             /> 
           </SignedIn> */}
-          <p className="text-gray-500 text-xl">2.22.1</p>
+          <p className="text-gray-500 text-lg">2.22.1</p>
         </div>
       </div>
     </nav>

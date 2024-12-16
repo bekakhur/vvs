@@ -25,7 +25,7 @@ const page = () => {
       </div>
       <div className="h-20 mt-[80px]">
         <SignedIn>
-          <UserButton
+          {/* <UserButton
             showName // Включаем отображение имени пользователя
             appearance={{
               elements: {
@@ -51,7 +51,12 @@ const page = () => {
                 },
               },
             }}
-          />
+          /> */}
+          <SignOutButton>
+            <button className="border-black border uppercase rounded-md p-4">
+              sign out
+            </button>
+          </SignOutButton>
         </SignedIn>
         <SignedOut>
           <SignInButton mode="modal">
