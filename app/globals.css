@@ -10,4 +10,15 @@ p {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .safari-fixed-height {
+    height: 100%;
+    min-height: -webkit-fill-available; /* Заполняет экран в iOS */
+    min-height: 100dvh; /* Учитывает динамическую высоту экрана */
+  }
+
+  .no-bounce {
+    overscroll-behavior: none; /* Предотвращает эффект "подскакивания" */
+    -webkit-overflow-scrolling: touch; /* Плавный скроллинг для Safari */
+  }
 }

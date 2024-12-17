@@ -1,3 +1,5 @@
+import Cards from "@/components/Cards";
+import LoginFormWithPayment from "@/components/LoginFormWithPayment";
 import {
   SignedIn,
   SignedOut,
@@ -13,17 +15,16 @@ const menuList = ["info", "subscriptions", "payment", "preferences"];
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col font-semibold pt-24 pb-20 bg-white gap-12 min-h-screen items-center">
-      <div className="flex flex-col w-full items-center gap-8">
+    <div className="w-full flex flex-col pt-24 pb-20 bg-gradient-to-t from-white via-zinc-100 to-white gap-12 min-h-screen items-center">
+      <div className="flex flex-col w-full gap-8 items-center">
         <h1 className="text-4xl">ACCOUNT</h1>
 
-        <div className="flex flex-col w-3/4 lg:w-1/2 font-extralight gap-20 text-3xl uppercase">
-          {menuList.map((e) => {
-            return <h2>{e}</h2>;
-          })}
+        <div className="w-full">
+          <Cards />
+          <LoginFormWithPayment />
         </div>
       </div>
-      <div className="h-20 mt-[80px]">
+      <div className="h-20 mt-[40px]">
         <SignedIn>
           {/* <UserButton
             showName // Включаем отображение имени пользователя

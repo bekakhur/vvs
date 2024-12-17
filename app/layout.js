@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         </head>
         <body
-          className={`${oswald.className} bg-gradient-to-r select-none no-scrollbar portrait:no-scrollbar min-h-[100dvh] landscape:no-scrollbar landscape:bg-black portrait:bg-black overscroll-y-none from-black via-zinc-800 to-black`}
+          className={`${oswald.className} bg-gradient-to-r safari-fixed-height no-bounce select-none no-scrollbar portrait:no-scrollbar min-h-[100dvh] landscape:no-scrollbar landscape:bg-black portrait:bg-black overscroll-y-none from-black via-zinc-800 to-black`}
         >
           <Header />
           <div>{children}</div>
