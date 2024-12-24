@@ -1,4 +1,3 @@
-import Cards from "@/components/Cards";
 import LoginFormWithPayment from "@/components/LoginFormWithPayment";
 import {
   SignedIn,
@@ -15,16 +14,20 @@ const menuList = ["info", "subscriptions", "payment", "preferences"];
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col pt-24 pb-20 bg-gradient-to-t from-white via-zinc-100 to-white gap-12 min-h-screen items-center">
+    <div className="w-full flex flex-col pt-28 pb-20 bg-gradient-to-t from-white to-white gap-12 min-h-screen items-center">
       <div className="flex flex-col w-full gap-8 items-center">
         <h1 className="text-4xl">ACCOUNT</h1>
 
-        <div className="w-full">
-          <Cards />
-          <LoginFormWithPayment />
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center">
+          <img src="./vintage_banner.png" alt="" className="w-4/5 sm:w-1/2" />
+          <SignedIn>
+            <div className="p-4">
+              <LoginFormWithPayment />
+            </div>
+          </SignedIn>
         </div>
       </div>
-      <div className="h-20 mt-[40px]">
+      <div className="mt-[40px]">
         <SignedIn>
           {/* <UserButton
             showName // Включаем отображение имени пользователя
@@ -54,14 +57,14 @@ const page = () => {
             }}
           /> */}
           <SignOutButton>
-            <button className="border-black border uppercase rounded-md p-4">
+            <button className="border-black border uppercase rounded-sm p-4">
               sign out
             </button>
           </SignOutButton>
         </SignedIn>
         <SignedOut>
           <SignInButton mode="modal">
-            <button className="border-black border uppercase rounded-md p-4">
+            <button className="border-black border uppercase rounded-sm p-4">
               sign in
             </button>
           </SignInButton>

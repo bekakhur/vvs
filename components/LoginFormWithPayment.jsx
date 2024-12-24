@@ -2,21 +2,21 @@ import React from "react";
 
 const LoginFormWithPayment = () => {
   return (
-    <div className="uppercase w-full flex flex-col md:flex-row gap-8 justify-center items-center">
-      <div className="flex flex-col w-2/3 md:w-1/3 gap-4 max-w-[350px]">
+    <div className="uppercase min-w-[300px] max-w-[400px] flex flex-col md:flex-row">
+      <form className="flex w-full flex-col gap-4">
         <h2 className="text-2xl font-semibold text-zinc-500">info</h2>
         <input
-          type="input"
+          type="email"
           placeholder="EMAIL"
-          className="w-full p-2 outline-none border border-gray-400 rounded-sm "
+          className="w-full p-2 text-sm font-thin outline-none border border-gray-400 rounded-sm "
         />
         <input
-          type="input"
+          type="password"
           placeholder="PASSWORD"
-          className="w-full p-2 outline-none border border-gray-400 rounded-sm "
+          className="w-full p-2 text-sm font-thin outline-none border border-gray-400 rounded-sm "
         />
-      </div>
-      <div className="flex flex-col gap-4 w-2/3 md:w-1/3 max-w-[350px]">
+      </form>
+      {/* <div className="flex flex-col gap-4 w-4/5 md:w-1/3 max-w-[400px]">
         <h2 className="text-2xl font-semibold text-zinc-500">payment</h2>
         <input
           type="input"
@@ -35,7 +35,7 @@ const LoginFormWithPayment = () => {
             className="w-[120px] p-2 outline-none border border-gray-400 rounded-sm "
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
