@@ -47,12 +47,12 @@ const MovieGrid = ({ title, videoIds }) => {
       <h2 className="text-white font-semibold uppercase text-[25px] sm:text-[50px]">
         {title}
       </h2>
-      <div className="flex flex-wrap gap-4 px-4 sm:px-10">
+      <div className="flex flex-wrap gap-2 px-4 sm:px-10">
         {thumbnails.map((video, index) => (
           <Link
             href={`/player/${video.id}`}
             key={index}
-            className="flex-1 min-w-[calc(50%-1rem)] lg:min-w-[calc(25%-1rem)] relative grayscale flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
+            className="flex-1 min-w-[calc(50%-1rem)] lg:min-w-[calc(25%-1rem)] border border-white/30 shadow-xl shadow-white/5 rounded-sm relative grayscale flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
           >
             <SignedOut>
               <img
@@ -66,7 +66,7 @@ const MovieGrid = ({ title, videoIds }) => {
             </div>
             <img
               src={video.thumbnail}
-              className="w-full cursor-pointer opacity-70 h-40 object-cover md:h-64"
+              className="w-full cursor-pointer rounded-sm opacity-70 h-40 object-cover md:h-64"
             />
             <h3 className="text-white text-xl font-semibold absolute left-2 bottom-1 md:bottom-2">
               {video.title}
