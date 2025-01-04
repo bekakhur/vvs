@@ -5,7 +5,6 @@ import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import React from "react";
-import { useEffect } from "react";
 
 const images = [
   "./joker.jpg",
@@ -20,12 +19,6 @@ const pickOfTheWeek = ["x66aov7", "x6aiala", "x6ku1og"];
 const movies = ["x77n9jw"];
 
 const page = () => {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo(0, 1); // Triggers a small scroll to hide the URL bar
-    }
-  }, []);
-
   return (
     <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
       {/* <Image

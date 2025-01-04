@@ -1,24 +1,41 @@
-import React from "react";
+"use client";
 
-const Cards = () => {
+import { useUser } from "@clerk/clerk-react";
+
+export default function Profile() {
+  const { user, isLoaded, isSignedIn } = useUser();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>; // Показать загрузку, пока данные не получены
+  }
+
+  if (!isSignedIn) {
+    return <div>Вы не авторизованы</div>; // Если пользователь не авторизован
+  }
+
+  const registrationDate = new Date(user.createdAt).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+
   return (
-    <div className="uppercase w-full mb-12 flex flex-col md:flex-row gap-8 text-3xl font-semibold justify-center items-center">
-      <div className="flex flex-col h-80 items-center justify-center rounded-xl shadow-2xl bg-gradient-to-t from-yellow-300 to-yellow-200 border border-yellow-300 w-4/5 md:w-1/3 gap-4 max-w-[400px]">
-        <h2>monthly</h2>
-        <h2 className="text-5xl">$4.99</h2>
-        <button className="px-4 py-2 uppercase mt-4 rounded-sm shadow-2xl bg-gradient-to-t from-yellow-100 to-yellow-50">
-          select
-        </button>
+    <div className="profile">
+      <h2>Ваш профиль</h2>
+
+      <div>
+        <label>Email:</label>
+        <p>
+          {user?.primaryEmailAddress?.emailAddress || "Email не найден"}
+        </p>{" "}
+        {/* Выводим email или сообщение */}
+        <p>{registrationDate || ""}</p>
       </div>
-      <div className="flex flex-col h-80 items-center justify-center rounded-xl shadow-2xl bg-gradient-to-t from-yellow-300 to-yellow-200 border border-yellow-300 w-4/5 md:w-1/3 gap-4 max-w-[400px]">
-        <h2>lifetime</h2>
-        <h2 className="text-5xl">$29.99</h2>
-        <button className="px-4 py-2 uppercase mt-4 rounded-sm shadow-2xl bg-gradient-to-t from-yellow-100 to-yellow-50">
-          select
-        </button>
-      </div>
+
+      {/* Здесь добавьте остальную логику для смены пароля, если нужно */}
     </div>
   );
-};
-
-export default Cards;
+}
