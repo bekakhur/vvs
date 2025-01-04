@@ -3,6 +3,7 @@ import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
+import MovieGrid from "@/components/MovieGrid";
 
 const pickOfTheWeek = ["x66aov7", "x6aiala", "x6ku1og"];
 const movies = ["x77n9jw"];
@@ -32,9 +33,9 @@ const page = () => {
   return (
     <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
       <Banner img="/time_enemy.jpg" title="time enemy" videoId="x66aov7" />
-      <Carousel title="30s" videoIds={m30} />
-      <Carousel title="40s" videoIds={m40} />
-      <Carousel title="50s" videoIds={pickOfTheWeek} />
+      <MovieGrid title="30s" videoIds={m30} />
+      <MovieGrid title="40s" videoIds={m40} />
+      <MovieGrid title="30s" videoIds={m30} />
       <Footer />
     </div>
   );

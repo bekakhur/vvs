@@ -14,7 +14,7 @@ const menuList = ["info", "subscriptions", "payment", "preferences"];
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col pt-28 pb-20 bg-gradient-to-t from-white to-white gap-12 min-h-screen items-center">
+    <div className="w-full flex flex-col pt-28 pb-20 bg-gradient-to-t from-white to-white gap-8 min-h-screen items-center">
       <div className="flex flex-col w-full gap-8 items-center">
         <h1 className="text-4xl">ACCOUNT</h1>
 
@@ -27,7 +27,7 @@ const page = () => {
           </SignedIn>
         </div>
       </div>
-      <div className="mt-[40px]">
+      <div>
         <SignedIn>
           {/* <UserButton
             showName // Включаем отображение имени пользователя
