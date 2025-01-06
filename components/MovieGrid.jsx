@@ -37,10 +37,31 @@ const MovieGrid = ({ title, videoIds }) => {
   }, []);
 
   const formatDuration = (seconds) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+    const hours = Math.floor(seconds / 3600); // Часы
+    const minutes = Math.floor((seconds % 3600) / 60); // Минуты
+    const remainingSeconds = seconds % 60; // Секунды
+
+    // Форматируем минуты и секунды с ведущими нулями
+    const formattedMinutes = minutes.toString().padStart(2, "0");
+    const formattedSeconds = remainingSeconds.toString().padStart(2, "0");
+
+    // Если видео меньше часа, убираем часы
+    if (hours > 0) {
+      return `${hours}:${formattedMinutes}:${formattedSeconds}`;
+    } else {
+      return `${formattedMinutes}:${formattedSeconds}`;
+    }
   };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % thumbnails.length);
+    }, 15000); // 3 секунды
+
+    return () => clearInterval(interval); // Очистить интервал при размонтировании
+  }, [thumbnails.length]);
 
   return (
     <div className="w-full flex flex-col gap-8 items-center">
@@ -52,7 +73,7 @@ const MovieGrid = ({ title, videoIds }) => {
           <Link
             href={`/player/${video.id}`}
             key={index}
-            className="flex-1 min-w-[calc(50%-1rem)] lg:min-w-[calc(25%-1rem)] border border-white/20 rounded-sm relative grayscale flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
+            className="flex-1 min-w-[calc(50%-1rem)] lg:min-w-[calc(25%-1rem)] border border-white/20 rounded-md relative grayscale flex justify-center items-center bg-gradient-to-t from-black via-black to-zinc-600"
           >
             <SignedOut>
               <img
@@ -66,13 +87,34 @@ const MovieGrid = ({ title, videoIds }) => {
             </div>
             <img
               src={video.thumbnail}
-              className="w-full cursor-pointer rounded-sm opacity-70 h-40 object-cover md:h-64"
+              className="w-full cursor-pointer rounded-md opacity-50 h-40 object-cover md:h-64"
             />
-            <h3 className="text-white text-xl font-semibold absolute left-2 bottom-1 md:bottom-2">
+            <h3 className="text-white font-semibold absolute left-2 bottom-1 md:bottom-2">
               {video.title}
             </h3>
           </Link>
         ))}
+      </div>
+      <div className="relative w-[90vw] max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
+        <div
+          className="flex transition-transform duration-[5000ms]"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {thumbnails.map((item, index) => (
+            <div key={index} className="w-full justify-center flex-shrink-0">
+              <img
+                src={item.thumbnail} // Используем thumbnail из массива
+                alt={`slide ${index}`}
+                className="w-full h-full opacity-70 object-cover"
+              />
+              <h2 className="absolute bottom-4 text-3xl text-center font-semibold w-full text-white">
+                {item.title}
+              </h2>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
