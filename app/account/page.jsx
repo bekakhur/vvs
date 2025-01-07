@@ -19,7 +19,11 @@ const page = () => {
         <h1 className="text-4xl">ACCOUNT</h1>
 
         <div className="w-full flex flex-col sm:flex-row items-center justify-center">
-          <img src="./vintage_banner.png" alt="" className="w-4/5 sm:w-1/2" />
+          <img
+            src="./vintage_banner.png"
+            alt=""
+            className="w-4/5 mb-6 sm:w-1/2"
+          />
           <SignedIn>
             <div className="p-4">
               <LoginFormWithPayment />
