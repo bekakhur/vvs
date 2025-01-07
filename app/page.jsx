@@ -4,17 +4,16 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
-const pickOfTheWeek = [
-  "x66aov7",
-  "x6aiala",
-  "x6ku1og",
-  "x6vvwea",
-  "x6vw7fl",
-  "x6w35la",
-  "x6rr15m",
+const m50 = [
+  "x963dpw",
+  "x8jxj29",
+  "x8hc0m6",
+  "x7ut7pe",
+  "x8jtm1c",
+  "x3eq1p1",
+  "x8zuuy8",
+  "x90pdfm",
 ];
-const movies = ["x77n9jw", "x6pt1q8", "x6qbv6p"];
-
 const m40 = [
   "x6ukg92",
   "x6wacwi",
@@ -25,7 +24,6 @@ const m40 = [
   "x6qocf1",
   "x6vpalx",
 ];
-
 const m30 = [
   "x6xh1zk",
   "x6q5p0r",
@@ -58,10 +56,9 @@ export default function Home() {
       </div> */}
 
       <Banner img="/joker.jpg" title="joker" videoId="x6ku1og" />
-      <Carousel title="wild west" videoIds={pickOfTheWeek} />
-      <Carousel title="new york" videoIds={movies} />
-      <Carousel title="chicago" videoIds={movies} />
-      <Carousel title="oscar winners" videoIds={movies} />
+      <Carousel title="30s" videoIds={m30} />
+      <Carousel title="40s" videoIds={m40} />
+      <Carousel title="50s" videoIds={m50} />
       <Footer />
     </div>
   );

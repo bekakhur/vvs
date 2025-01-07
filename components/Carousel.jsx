@@ -107,7 +107,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
       <h2 className="text-white font-semibold uppercase text-[25px] sm:text-[50px]">
         {title}
       </h2>
-      <div className="relative w-full h-[320px] flex items-center  md:h-[340px] bg-zinc-900 border border-zinc-400 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
+      <div className="relative w-full h-[320px] flex items-center  md:h-[340px] bg-zinc-900 border border-zinc-400/50 rounded-sm p-4 max-w-6xl mx-auto overflow-hidden">
         <div
           className="flex transition-transform duration-500 bg-zinc-900 ease-in-out"
           style={{
@@ -119,7 +119,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
             <Link
               href={`/player/${video.id}`}
               key={index}
-              className="flex-shrink-0 relative grayscale h-[300px] md:[350px] border border-white/30 rounded-2xl flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
+              className="flex-shrink-0 relative grayscale h-[300px] md:[350px] border border-white/30 rounded-md flex justify-center items-center bg-gradient-to-t from-black via-gray-600 to-black"
               style={{
                 width: `calc(${100 / slidesToScroll}% - ${gap}px)`, // Корректируем ширину с учётом отступов
               }}
@@ -137,7 +137,7 @@ const Carousel = ({ slidesToShow = 3, gap = 20, title, videoIds }) => {
               <img
                 src={video.thumbnail}
                 alt={`Slide ${index + 1}`}
-                className="w-full cursor-pointer opacity-70 object-cover h-[300px] md:[350px] rounded-2xl"
+                className="w-full cursor-pointer opacity-70 object-cover h-[300px] md:[350px] rounded-md"
               />
               <h3 className="text-white text-xl font-semibold absolute left-2 bottom-1 md:bottom-2">
                 {video.title}

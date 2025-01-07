@@ -5,8 +5,16 @@ import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
 import MovieGrid from "@/components/MovieGrid";
 
-const pickOfTheWeek = ["x66aov7", "x6aiala", "x6ku1og"];
-const movies = ["x77n9jw"];
+const m50 = [
+  "x963dpw",
+  "x8jxj29",
+  "x8hc0m6",
+  "x7ut7pe",
+  "x8jtm1c",
+  "x3eq1p1",
+  "x8zuuy8",
+  "x90pdfm",
+];
 const m40 = [
   "x6ukg92",
   "x6wacwi",
@@ -17,7 +25,6 @@ const m40 = [
   "x6qocf1",
   "x6vpalx",
 ];
-
 const m30 = [
   "x6xh1zk",
   "x6q5p0r",
@@ -35,7 +42,7 @@ const page = () => {
       <Banner img="/time_enemy.jpg" title="time enemy" videoId="x66aov7" />
       <MovieGrid title="30s" videoIds={m30} />
       <MovieGrid title="40s" videoIds={m40} />
-      <MovieGrid title="30s" videoIds={m30} />
+      <MovieGrid title="50s" videoIds={m50} />
       <Footer />
     </div>
   );

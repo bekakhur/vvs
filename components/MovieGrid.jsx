@@ -95,7 +95,7 @@ const MovieGrid = ({ title, videoIds }) => {
           </Link>
         ))}
       </div>
-      <div className="relative w-[90vw] max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
+      <div className="relative w-[90vw] rounded-sm max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
         <div
           className="flex transition-transform duration-[5000ms]"
           style={{
