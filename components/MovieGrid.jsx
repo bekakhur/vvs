@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
-const MovieGrid = ({ title, videoIds }) => {
+const MovieGrid = ({ title, videoIds, banner }) => {
   const [thumbnails, setThumbnails] = useState([]);
   // замените на настоящие идентификаторы видео
 
@@ -96,25 +96,31 @@ const MovieGrid = ({ title, videoIds }) => {
         ))}
       </div>
       <div className="relative w-[90vw] rounded-sm max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
-        <div
-          className="flex transition-transform duration-[5000ms]"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
-        >
-          {thumbnails.map((item, index) => (
-            <div key={index} className="w-full justify-center flex-shrink-0">
-              <img
-                src={item.thumbnail} // Используем thumbnail из массива
-                alt={`slide ${index}`}
-                className="w-full h-full opacity-70 object-cover"
-              />
-              <h2 className="absolute bottom-4 text-3xl text-center font-semibold w-full text-white">
-                {item.title}
-              </h2>
-            </div>
-          ))}
-        </div>
+        {banner ? null : (
+          <div
+            className="flex transition-transform duration-[5000ms]"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {thumbnails.map((item, index) => (
+              <Link
+                key={index}
+                href={`/player/${item.id}`}
+                className="w-full justify-center flex-shrink-0"
+              >
+                <img
+                  src={item.thumbnail} // Используем thumbnail из массива
+                  alt={`slide ${index}`}
+                  className="w-full h-full opacity-70 object-cover"
+                />
+                <h2 className="absolute bottom-4 text-3xl text-center font-semibold w-full text-white">
+                  {item.title}
+                </h2>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

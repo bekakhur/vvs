@@ -46,10 +46,10 @@ const Banner = ({ img, title, videoId }) => {
           </Link>
         </div>
       </div>
-      <div className="w-full flex justify-center realtive h-20">
-        <div className="absolute left-0 w-[30%] bg-gradient-to-br from-black via-60% via-transparent to-transparent h-20"></div>
-        <div className="absolute right-0 w-[30%] bg-gradient-to-bl from-black via-60% via-transparent to-transparent h-20"></div>
-        <div className="h-40 bg-gradient-to-b w-full from-black  to-transparent"></div>
+      <div className="w-full flex justify-center realtive h-10">
+        <div className="absolute left-0 w-[30%] bg-gradient-to-br from-black via-60% via-transparent to-transparent h-10"></div>
+        <div className="absolute right-0 w-[30%] bg-gradient-to-bl from-black via-60% via-transparent to-transparent h-10"></div>
+        <div className="h-20 bg-gradient-to-b w-full from-black  to-transparent"></div>
       </div>
     </div>
   );

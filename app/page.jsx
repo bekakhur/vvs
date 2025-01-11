@@ -55,7 +55,7 @@ export default function Home() {
         </Link>
       </div> */}
 
-      <Banner img="/joker.jpg" title="joker" videoId="x6ku1og" />
+      <Banner img="/joker.jpg" title="joker" videoId="x66aov7" />
       <Carousel title="30s" videoIds={m30} />
       <Carousel title="40s" videoIds={m40} />
       <Carousel title="50s" videoIds={m50} />

@@ -38,11 +38,11 @@ const m30 = [
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
-      <Banner img="/time_enemy.jpg" title="time enemy" videoId="x66aov7" />
+    <div className="w-full flex flex-col min-h-screen">
+      <Banner img="/time_enemy.jpg" title="time enemy" videoId="x7ut7pe" />
       <MovieGrid title="30s" videoIds={m30} />
       <MovieGrid title="40s" videoIds={m40} />
-      <MovieGrid title="50s" videoIds={m50} />
+      <MovieGrid title="50s" videoIds={m50} banner={true} />
       <Footer />
     </div>
   );
