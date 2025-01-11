@@ -68,7 +68,7 @@ const MovieGrid = ({ title, videoIds, banner }) => {
       <h2 className="text-white font-semibold uppercase text-[25px] sm:text-[50px]">
         {title}
       </h2>
-      <div className="flex max-w-7xl flex-wrap gap-2 px-4 sm:px-10">
+      <div className="flex min-h-40 max-w-7xl flex-wrap gap-2 px-4 sm:px-10">
         {thumbnails.map((video, index) => (
           <Link
             href={`/player/${video.id}`}
@@ -95,8 +95,8 @@ const MovieGrid = ({ title, videoIds, banner }) => {
           </Link>
         ))}
       </div>
-      <div className="relative w-[90vw] rounded-sm max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
-        {banner ? null : (
+      {banner ? null : (
+        <div className="relative w-[90vw] mt-4 mb-8 rounded-sm max-w-[600px] shadow-xl shadow-zinc-700 bg-black h-auto overflow-hidden">
           <div
             className="flex transition-transform duration-[5000ms]"
             style={{
@@ -120,8 +120,8 @@ const MovieGrid = ({ title, videoIds, banner }) => {
               </Link>
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

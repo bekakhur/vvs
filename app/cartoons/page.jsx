@@ -38,7 +38,7 @@ const m30 = [
 
 const page = () => {
   return (
-    <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
+    <div className="w-full flex flex-col min-h-screen">
       <Banner img="/detachment.jpg" title="detachment" videoId="x8txj9k" />
       <MovieGrid title="30s" videoIds={m30} />
       <MovieGrid title="40s" videoIds={m40} />

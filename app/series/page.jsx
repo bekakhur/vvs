@@ -48,7 +48,7 @@ const m30 = [
 ];
 const page = () => {
   return (
-    <div className="w-full flex flex-col gap-16 md:gap-24 min-h-screen">
+    <div className="w-full flex flex-col min-h-screen">
       {/* <Image
         src="/knight.jpg"
         width={500}
