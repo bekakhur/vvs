@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
 import MovieGrid from "@/components/MovieGrid";
+import { useEffect } from "react";
 
 const m50 = [
   "x963dpw",
@@ -37,6 +40,15 @@ const m30 = [
 ];
 
 const page = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 50, behavior: "smooth" });
+    }, 500); // 500 мс
+
+    // Очистка таймера при размонтировании компонента
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="w-full flex flex-col min-h-screen">
       <Banner img="/time_enemy.jpg" title="time enemy" videoId="x7ut7pe" />
