@@ -42,7 +42,7 @@ const m30 = [
 const page = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.scrollTo({ top: 50, behavior: "smooth" });
+      window.scrollTo({ top: 400, behavior: "smooth" });
     }, 500); // 500 мс
 
     // Очистка таймера при размонтировании компонента

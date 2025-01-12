@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import React from "react";
 import MovieGrid from "@/components/MovieGrid";
+import { useEffect } from "react";
 
 const images = [
   "./joker.jpg",
@@ -47,6 +48,12 @@ const m30 = [
   "x8ucf1y",
 ];
 const page = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 1); // Triggers a small scroll to hide the URL bar
+    }
+  }, []);
+
   return (
     <div className="w-full flex flex-col min-h-screen">
       {/* <Image
