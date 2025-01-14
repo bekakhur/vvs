@@ -7,7 +7,7 @@ const LoginFormWithPayment = () => {
   const { user, isLoaded, isSignedIn } = useUser();
 
   if (!isLoaded) {
-    return <div>Loading...</div>; // Показать загрузку, пока данные не получены
+    return <div className="text-center text-zinc-500">Loading...</div>; // Показать загрузку, пока данные не получены
   }
 
   if (!isSignedIn) {

@@ -22,10 +22,10 @@ const page = () => {
           <img
             src="./vintage_banner.png"
             alt=""
-            className="w-4/5 mb-6 sm:w-1/2"
+            className="w-4/5 mb-6 min-h-[200px] max-w-[600px] sm:flex-1 min-w-[200px] sm:w-1/2"
           />
           <SignedIn>
-            <div className="p-4">
+            <div className="p-4 sm:flex-1 flex justify-center max-w-xl">
               <LoginFormWithPayment />
             </div>
           </SignedIn>
